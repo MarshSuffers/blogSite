@@ -4,6 +4,8 @@
   "description": "Made for the series of assignments about creating a blog site",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,5 +35,8 @@
     "jsonwebtoken": "^9.0.3",
     "method-override": "^3.0.0",
     "mongoose": "^9.9.3"
+  },
+  "allowScripts": {
+    "bcrypt@6.0.0": true
   }
 }
