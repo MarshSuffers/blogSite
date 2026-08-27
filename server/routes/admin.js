@@ -1,11 +1,13 @@
+const express = require("express");
+const router = express.Router();
 const Post = require("../models/Post");
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwtSecret = process.env.JWT_SECRET;
-const adminLayout = "../views/layout/admin";
+const adminLayout = "../views/layouts/admin";
 
-Router.get("/admin", async (req, res) => {
+router.get("/admin", async (req, res) => {
 	try {
 		const locals = {
 			title: "Admin",
