@@ -11,16 +11,6 @@ router.get("/", async (req, res) => {
 	};
 
 	try {
-		const data = await Post.find().sort({ title: "desc" });
-		res.render("index", { locals, data });
-	} catch (error) {
-		console.log(error);
-	}
-});
-
-//Pagination
-router.get("/", async (req, res) => {
-	try {
 		const locals = {
 			title: "NodeJs Blog",
 			description: "Simple Blog created with NodeJs, Express & MongoDb.",
@@ -47,6 +37,7 @@ router.get("/", async (req, res) => {
 			current: page,
 			nextPage: hasNextPage ? nextPage : null,
 			prevPage: hasNextPagePlus ? page - 1 : null,
+			currentRoute: "/",
 		});
 	} catch (error) {
 		console.log(error);
